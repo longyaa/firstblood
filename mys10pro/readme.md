@@ -1,0 +1,3 @@
+一个简单的用户注册登录系统。
+除了flask中常见的框架组件（Blueprint、wtforms、flask_uploads等），还用了dbutils做数据库连接池，用pandas处理数据，os处理文件。
+注册之后可以登录，上传文件之后可以在页面查看上传的文件信息。

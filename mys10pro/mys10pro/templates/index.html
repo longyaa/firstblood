@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.photo }}
+        {% for user in user_list %}
+            {{user.name}} {{user.value}}
+        {% endfor %}
+        {% for error in form.photo.errors %}
+            <span style="color:red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.submit }}
+
+    </form>
+    {% if file_url %}
+    <br><img src="{{ file_url }}">
+    {% endif %}
+    <ul>
+        {% for k in info %}
+            <li>{{k.username}} <a href="{{k.pwd}}">查看</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
