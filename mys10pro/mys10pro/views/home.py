@@ -8,6 +8,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField,FileRequired,FileAllowed
 from wtforms import SubmitField
 from .. import myfile
+
 home = Blueprint('home',__name__)
 
 class UploadedForm(FlaskForm):
@@ -34,7 +35,7 @@ def index():
             mycorsur2.executemany(sql1,mydata)
     else:
         file_url = None
-    #读出数据
+    # 读出数据
     sql2 = "SELECT username,pwd FROM `fl_user`"
     with PoolDB() as mycorsur:
         mycorsur.execute(sql2)
